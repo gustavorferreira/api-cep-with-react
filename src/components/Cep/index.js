@@ -1,4 +1,4 @@
-import {useEffect, useState} from "react";
+import { useState} from "react";
 
 export function Cep() {
     const [cep, setCep] = useState("");
@@ -56,10 +56,6 @@ export function Cep() {
         fetchData();
     }
 
-    useEffect(() => {
-        getCep();
-    },[getCep])
-
     return(
         <div>
             <label>CEP: </label>
@@ -70,7 +66,7 @@ export function Cep() {
                 maxLength='8'
                 onChange={getValue}
             />
-            <br/>
+            <button type='submit' onClick={getCep}>Buscar</button>
             <br/>
             <div>
                 {cep.cep && (
@@ -78,12 +74,12 @@ export function Cep() {
                         <thead>
                         <tr>
                             <th>CEP</th>
-                            <th>logradouro</th>
-                            <th>complemento</th>
-                            <th>bairro</th>
-                            <th>localidade</th>
-                            <th>uf</th>
-                            <th>ddd</th>
+                            <th>Logradouro</th>
+                            <th>Complemento</th>
+                            <th>Bairro</th>
+                            <th>Localidade</th>
+                            <th>UF</th>
+                            <th>DDD</th>
                         </tr>
                         </thead>
                         <tbody>
